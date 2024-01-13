@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('home', { title: 'NEVER ENOUGH NOVELS'});
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -21,14 +21,14 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: 'index',
-    failureRedirect: 'index'
+    successRedirect: 'home',
+    failureRedirect: 'home'
   }
 ));
 
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('index');
+    res.redirect('home');
   });
 });
 

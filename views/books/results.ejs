@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<h2>Results</h2>
+
+
+  <img src=" <%= book.imageLinks.thumbnail %>" alt="">
+    <p><%= book.title %></p>
+    <p><%= book.description %></p>
+
+<form action="/books/library" method="POST">
+  <input type="hidden" value=" <% book %>">
+  <input type="submit" value="Add to Library">
+</form>
+
+
+<%- include('../partials/footer') %>

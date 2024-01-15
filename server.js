@@ -1,20 +1,23 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var session = require('express-session');
-var passport = require('passport');
-var methodOverride = require('method-override');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require('express-session');
+const passport = require('passport');
+const methodOverride = require('method-override');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const homeRouter = require('./routes/home');
+const userRouter = require('./routes/users');
+const libraryRouter = require('./routes/library');
+const booksRouter = require('./routes/books');
+
 
 require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,8 +44,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', homeRouter);
+app.use('/users', userRouter);
+app.use('/library', libraryRouter);
+app.use('/books', booksRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

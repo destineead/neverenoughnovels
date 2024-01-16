@@ -26,7 +26,13 @@ const bookSchema = new Schema({
   addedBy: [{
     type: Schema.Types.ObjectId,
     ref: 'User'
-  }]
+  }],
+  ratings: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Rating'
+    }
+  ]
 });
 
 

@@ -24,21 +24,18 @@
       <a href="/" class="logo">
        <!-- <img src="" alt=""> -->
       </a>
-
       <ul class="navmenu">
         <li>
-          <a href="/">Home</a>
+          <a href="/">HOME</a>
         </li>
         <li class="mylibrary">
-          <a href="/books/library" class="navlink">My Library</a>
+          <a href="/books/library" class="navlink">MY LIBRARY</a>
         </li>
-
           <% if (user) { %>
             <a href="/logout">LOG OUT</a>
             <% } else { %>
               <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
               <% } %>
-            </ul>
-    </div>
+       </ul>
     </nav>
   </header>

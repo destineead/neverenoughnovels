@@ -10,7 +10,7 @@ const bookSchema = new Schema({
     type: String
   }],
   rating: {
-    type: Number
+    type: String
   },
   description: {
     type: String
@@ -19,8 +19,17 @@ const bookSchema = new Schema({
     type: String
   },
   reviews: [],
-  image: String
+  image: String,
+  subtitle: String,
+  categories: [],
+  // users who added to library
+  addedBy: [{
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }]
 });
+
+
 
 
 module.exports = mongoose.model('Book', bookSchema);

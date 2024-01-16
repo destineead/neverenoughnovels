@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<h1>My Library</h1>
+
+<% books.forEach(function (book) { %>
+
+  <img src="<%= book.image %>" alt="">
+  <p><%= book.title %></p>
+  <p><%= book.description %></p>
+
+  <form action="/books/library/<%= book._id %>?_method=DELETE" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Remove</button>
+  </form>
+ 
+
+<% }) %>
+
+<%- include('../partials/footer') %>

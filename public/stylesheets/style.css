@@ -1,4 +1,6 @@
-
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 body {
   padding: 50px;
@@ -6,7 +8,8 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: black;
+  text-decoration: none;
 }
 
 .login {
@@ -19,3 +22,32 @@ a {
 .login img {
   height: 30px;
 }
+
+nav .logo {
+  display: flex;
+  justify-content: flex-start 1;
+}
+
+.navmenu {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.search, .submit {
+  width:200px;
+  padding:10px;
+  border-radius:10px;
+  width:30%;
+}
+
+.submit {
+  padding:10px;
+  border: none;
+  background-color:#3F51B5;
+  color:#fff;
+  font-weight:600;
+  border-radius:5px;
+  width:30%;
+}
+

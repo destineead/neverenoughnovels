@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <!-- CSS -->
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <!-- BOOTSTRAP -->
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,40 +19,26 @@
 
 <body>
   <!-- HEADER -->
-  <header class="header" id="header"></header>
-    <nav class="nav container">
-      <a href="/" class="navlogo">
-        <i class="ri-book-fill"></i>
+  <header>
+    <nav>
+      <a href="/" class="logo">
+       <!-- <img src="" alt=""> -->
       </a>
-      <div class="navmenu">
-        <ul class="navlist">
-          <li class="navitem">
-            <a href="/" class="navlink"></a>
-            <i class="ri-home-heart-line"></i>
-            <span>Home</span>
-          </li>
 
-          <li class="navitem">
-            <a href="/" class="navlink"></a>
-            <i class="ri-book-fill"></i>
-            <span>Featured</span>
-          </li>
-          
-          <li class="navitem">
-            <a href="/" class="navlink"></a>
-            <i class="ri-folders-fill"></i>
-            <span>My Library</span>
-          </li>
-          <li class="navitem">
-            <a href="/" class="navlink"></a>
-            <i class="ri-user-fill"></i>
-            <span>Profile</span>
-          </li>
+      <ul class="navmenu">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li class="mylibrary">
+          <a href="/books/library" class="navlink">My Library</a>
+        </li>
+
           <% if (user) { %>
             <a href="/logout">LOG OUT</a>
             <% } else { %>
               <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
               <% } %>
             </ul>
-          </div>
-  </nav>
+    </div>
+    </nav>
+  </header>

@@ -1,9 +1,11 @@
 <%- include('./partials/header') %>
 
 <h2>Home Page</h2>
-<form action="/books/search" method="GET">
-  <input type="text" name="search">
-  <button type="submit">search</button>
+
+<form action="/books/search"  method="GET">
+  <input type="text" class="search"> <br>
+  <button type="submit" class="submit">Show me the novels</button>
 </form>
+
 
 <%- include('./partials/footer') %>

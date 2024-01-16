@@ -2,15 +2,24 @@
 
 <h2>Results</h2>
 
+<% books.forEach(function (book) { %>
 
-  <img src=" <%= book.imageLinks.thumbnail %>" alt="">
-    <p><%= book.title %></p>
-    <p><%= book.description %></p>
-
-<form action="/books/library" method="POST">
-  <input type="hidden" value=" <% book %>">
+  <img src=" <%= book.volumeInfo.imageLinks.thumbnail %>" alt="">
+  <p><%= book.volumeInfo.title %></p>
+  <p><%= book.volumeInfo.description %></p>
+  
+  <form action="/books" method="POST">
+  <input type="hidden" name="title" value="<%= book.volumeInfo.title %>">
+  <input type="hidden" name="authors" value="<%= book.volumeInfo.authors %>">
+  <input type="hidden" name="subtitle" value="<%= book.volumeInfo.subtitle %>">
+  <input type="hidden" name="description" value="<%= book.volumeInfo.description %>">
+  <input type="hidden" name="categories" value="<%= book.volumeInfo.categories %>">
+  <input type="hidden" name="rating" value="<%= book.volumeInfo.averageRating %>">
+  <input type="hidden" name="image" value="<%= book.volumeInfo.imageLinks.thumbnail %>">
+  <input type="hidden" name="googleId" value="<%= book.id %>">
   <input type="submit" value="Add to Library">
 </form>
 
+<% }) %>
 
 <%- include('../partials/footer') %>

@@ -8,8 +8,6 @@ const passport = require('passport');
 const methodOverride = require('method-override');
 
 const homeRouter = require('./routes/home');
-const userRouter = require('./routes/users');
-const libraryRouter = require('./routes/library');
 const booksRouter = require('./routes/books');
 
 
@@ -45,8 +43,6 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', homeRouter);
-app.use('/users', userRouter);
-app.use('/library', libraryRouter);
 app.use('/books', booksRouter);
 
 

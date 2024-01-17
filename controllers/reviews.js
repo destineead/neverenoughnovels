@@ -10,7 +10,7 @@ async function deleteReview(req, res) {
   if (!book) return res.redirect('/books/library');
   book.reviews.remove(req.params.id);
   await book.save();
-  res.redirect('/books/library');
+  res.redirect(`/books/${book._id}`);
 }
 
 async function create(req, res) {
@@ -24,6 +24,6 @@ async function create(req, res) {
   } catch (err) {
     console.log(err);
   }
-  res.redirect('/books/library');
+  res.redirect(`/books/${book._id}`);
 }
 

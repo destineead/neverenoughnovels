@@ -14,8 +14,8 @@
 </tbody>
 
 <br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST"
-  action="/books/<%= book._id %>/reviews">
+<form id="add-review-form"
+  action="/books/<%= book._id %>/reviews" method="POST">
   <label>Review:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>
@@ -28,5 +28,35 @@
   </select>
   <input type="submit" value="Add Review">
 </form>
+
+<% if (book.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Content</th>
+        <th>User</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+
+
+    <button>Edit</button>
+
+
+
+
+    <tbody>
+      <% book.reviews.forEach(function(r) { %>
+        <tr>
+          <td><%= r.content %></td>
+          <td><%= r.user %></td>
+          <td><%= r.rating %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
 
 <%- include('../partials/footer') %>

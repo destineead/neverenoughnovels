@@ -4,13 +4,13 @@ module.exports = {
   searchAPI,
   addToLibrary,
   getLibrary,
-  deleteBook
+  deleteBook,
+  show
 }
 
 async function searchAPI(req, res) {
   const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${req.query.search}&maxResults=25&key=${process.env.API_KEY}`, { method: 'GET' })
   const books = await results.json()
-  // const book = books.items[0]
   res.render('books/results', { books:books.items })
 }
 
@@ -70,3 +70,8 @@ async function deleteBook(req, res) {
   }
 }
 
+async function show(req, res) {
+  console.log(req.params.id)
+  const book = await Book.findById(req.params.id);
+  res.render('books/show', { book , title: book.name });
+}

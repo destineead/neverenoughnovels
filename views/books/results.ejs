@@ -4,7 +4,11 @@
 
 <% books.forEach(function (book) { %>
 
-<img src=" <%= book.volumeInfo.imageLinks.thumbnail %>" alt="">
+  <% if (book.volumeInfo.imageLinks) { %>
+
+    <img src=" <%= book.volumeInfo.imageLinks.thumbnail %>" alt="">
+    <% } %>
+
 <p><%= book.volumeInfo.title %></p>
 <p><%= book.volumeInfo.description %></p>
   
@@ -15,14 +19,13 @@
   <input type="hidden" name="description" value="<%= book.volumeInfo.description %>">
   <input type="hidden" name="categories" value="<%= book.volumeInfo.categories %>">
   <input type="hidden" name="rating" value="<%= book.volumeInfo.averageRating %>">
+  <% if (book.volumeInfo.imageLinks) { %>
   <input type="hidden" name="image" value="<%= book.volumeInfo.imageLinks.thumbnail %>">
+  <% } %>
   <input type="hidden" name="googleId" value="<%= book.id %>">
   <input type="submit" value="ADD TO LIBRARY">
 </form>
 
-<form action="/books/<%= book._id %>/comments" method="POST">
-  <button type="button" >ADD RATING</button>
-</form>
 
 
 <% }) %>

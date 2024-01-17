@@ -1,5 +1,10 @@
 <%- include('../partials/header') %>
-<h1>My Library</h1>
+
+<section class="library" id="library">
+<h1 class="heading">My Library</h1>
+
+</section>
+
 
 <% books.forEach(function (book) { %>
 
@@ -11,7 +16,8 @@
     <input type="hidden" name="_method" value="DELETE">
     <button type="submit">Remove</button>
   </form>
- 
+
+  <a href="/books/<%= book._id %>">Test</a>
 
 <% }) %>
 

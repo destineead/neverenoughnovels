@@ -1,11 +1,11 @@
 :root {
-  --purple: #E2A0FF
+  --purple: #E2A0FF;
 } 
 
 * {
   margin: 0; padding: 0;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Tahoma, sans-serif;
   outline: none; border:none;
   text-decoration: none;
   text-transform: capitalize;
@@ -31,6 +31,86 @@ header {
   box-shadow: 0 .5rem 1rem rgb(0, 0, 0,.1);
 }
 
+header.logo {
+  font-size: 3rem;
+  color: #6A5B6E; 
+  font-weight: bolder;
+}
+
+header .navbar a{
+  font-size: 2rem;
+  padding:0 1.5rem;
+  color: #96616B;
+}
+
+header .navbar a:hover{
+  color:var(--purple);
+}
+
+a > img {
+  width: 500;
+  height: 300;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background:url('../imgs/book2.png'); no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .content {
+  max-width: 50rem;
+}
+
+.home .content h3{
+  font-size: 6rem;
+  color: #96616B;
+}
+
+.home .content span{
+  font-size: 3.5rem;
+  color: #E2A0FF;
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
+.home .content p{
+  font-size: 1.5rem;
+  color: #96616B;
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
+.submit{
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: #96616B;
+  color: #fff;
+  padding: .9rem 3.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.submit:hover{
+  background: #E2A0FF;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  color: #96616B;
+  padding: 1rem;
+  margin: 2rem 0;
+  background: #FDFFFC;
+}
 /* body {
   margin: 0;
   height: 100vh;

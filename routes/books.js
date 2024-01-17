@@ -8,6 +8,7 @@ router.get('/search', bookCtrl.searchAPI);
 router.post('/',  ensureLoggedIn, bookCtrl.addToLibrary);
 router.get('/library', ensureLoggedIn, bookCtrl.getLibrary);
 router.delete('/library/:id', bookCtrl.deleteBook);
+router.get('/:id', bookCtrl.show);
 
 
 module.exports = router;

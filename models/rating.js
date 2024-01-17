@@ -10,6 +10,7 @@ const ratingSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
+  userName: String,
   value: {
     type: Number,
     required: true,
@@ -17,8 +18,6 @@ const ratingSchema = new mongoose.Schema({
     max: 5
   },
   comment: String
-  }
-
 });
 
 const Rating = mongoose.model('Rating', ratingSchema);

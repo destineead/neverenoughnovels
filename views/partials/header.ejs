@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- BOOTSTRAP -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- CSS -->
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <!-- GOOGLE FONTS -->
@@ -20,22 +19,21 @@
 <body>
   <!-- HEADER -->
   <header>
-    <nav>
-      <a href="/" class="logo">
-       <!-- <img src="" alt=""> -->
-      </a>
-      <ul class="navmenu">
-        <li>
-          <a href="/">HOME</a>
-        </li>
-        <li class="mylibrary">
-          <a href="/books/library" class="navlink">MY LIBRARY</a>
-        </li>
-          <% if (user) { %>
-            <a href="/logout">LOG OUT</a>
-            <% } else { %>
-              <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-              <% } %>
-       </ul>
+    
+    <img src="/imgs/book.png">
+    
+    <nav class="navbar">
+      <a href="/">HOME
+        <img src="/imgs/home-line.png"></a>
+
+      <a href="/books/library">MY LIBRARY
+      <img src="/imgs/bookmark-line.png"></a>
+    
+      <% if (user) { %>
+      <a href="/logout">LOG OUT&nbsp;<img src="/imgs/user-line.png"></a>
+      <% } else { %>
+      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="/imgs/user-line.png"></a>
+      <% } %>
     </nav>
+
   </header>

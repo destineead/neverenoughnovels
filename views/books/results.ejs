@@ -1,33 +1,34 @@
 <%- include('../partials/header') %>
 
-<h2>Results</h2>
-
-<% books.forEach(function (book) { %>
-
-  <% if (book.volumeInfo.imageLinks) { %>
-
-    <img src=" <%= book.volumeInfo.imageLinks.thumbnail %>" alt="">
-    <% } %>
-
-<p><%= book.volumeInfo.title %></p>
-<p><%= book.volumeInfo.description %></p>
-  
-<form action="/books" method="POST">
-  <input type="hidden" name="title" value="<%= book.volumeInfo.title %>">
-  <input type="hidden" name="authors" value="<%= book.volumeInfo.authors %>">
-  <input type="hidden" name="subtitle" value="<%= book.volumeInfo.subtitle %>">
-  <input type="hidden" name="description" value="<%= book.volumeInfo.description %>">
-  <input type="hidden" name="categories" value="<%= book.volumeInfo.categories %>">
-  <input type="hidden" name="rating" value="<%= book.volumeInfo.averageRating %>">
-  <% if (book.volumeInfo.imageLinks) { %>
-  <input type="hidden" name="image" value="<%= book.volumeInfo.imageLinks.thumbnail %>">
-  <% } %>
-  <input type="hidden" name="googleId" value="<%= book.id %>">
-  <input type="submit" value="ADD TO LIBRARY">
-</form>
-
-
-
-<% }) %>
-
+<section class="books" id="books">
+  <h2 class="heading">Results</h2>
+  <div class="box-container">
+    <% books.forEach(function (book) { %>
+  <div class="box">
+    <p><%= book.volumeInfo.title %></p>
+      <div class="bookimg">
+        <% if (book.volumeInfo.imageLinks) { %>
+        <img src=" <%= book.volumeInfo.imageLinks.thumbnail %>" alt="">
+        <% } %> 
+        <div class="content"> 
+          <form action="/books" method="POST">
+            <input type="hidden" name="title" value="<%= book.volumeInfo.title %>">
+            <input type="hidden" name="authors" value="<%= book.volumeInfo.authors %>">
+            <input type="hidden" name="subtitle" value="<%= book.volumeInfo.subtitle %>">
+            <input type="hidden" name="description" value="<%= book.volumeInfo.description %>">
+            <input type="hidden" name="categories" value="<%= book.volumeInfo.categories %>">
+            <input type="hidden" name="rating" value="<%= book.volumeInfo.averageRating %>">
+            <% if (book.volumeInfo.imageLinks) { %>
+            <input type="hidden" name="image" value="<%= book.volumeInfo.imageLinks.thumbnail %>">
+            <% } %>
+            <input type="hidden" name="googleId" value="<%= book.id %>">
+            <input type="submit" id="addlibrary" value="ADD TO LIBRARY">
+          </form>   
+        </div>  
+      </div>  
+  </div>  
+  <% }) %>  
+  </div>
+</section>
+                
 <%- include('../partials/footer') %>

@@ -1,33 +1,36 @@
 <%- include('../partials/header') %>
-
+<section class="show">
 <h2>Book Details</h2>
 <tbody>
-    <%= book.title %>">
-    <%= book.authors %>">
-    <%= book.subtitle %>">
-    <%= book.description %>">
-    <%= book.categories %>">
-    <%= book.averageRating %>">
+    <%= book.title %><br>
+    <%= book.authors %><br>
+    <%= book.subtitle %><br>
+    <%= book.description %><br>
+    <%= book.categories %><br>
+    <%= book.averageRating %><br>
     <% if (book.image) { %>
       <img src="<%= book.image %>" alt="">
     <% } %>
 </tbody>
 
-<br><br><h2>Reviews</h2>
-<form id="add-review-form"
-  action="/books/<%= book._id %>/reviews" method="POST">
-  <label>Review:</label>
-  <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
+<div class="rating">
+<form action="/books/<%= book._id %>/reviews" method="POST">
+  <h2>Reviews</h2>
+  <div class="input-box">
+    <input type="text" placeholder="Tell is what you think?..."
+    required>
+    </div><br>
+    <br><br><label>&nbsp;&nbsp;Rating:</label>
+    <select name="rating">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
     <option value="5" selected>5</option>
-  </select>
-  <input type="submit" value="Add Review">
+  </select><br><br><br>
+  <button type="submit" class="submit">Add Review</button>
 </form>
+</div>
 
 <% if (book.reviews.length) { %>
   <table>
@@ -63,5 +66,5 @@
 <% } else { %>
   <h5>No Reviews Yet</h5>
 <% } %>
-
+</section>
 <%- include('../partials/footer') %>

@@ -1,24 +1,24 @@
 <%- include('../partials/header') %>
 
-<section class="library" id="library">
-<h1 class="heading">My Library</h1>
-
-</section>
-
-
-<% books.forEach(function (book) { %>
-
-  <img src="<%= book.image %>" alt="">
-  <p><%= book.title %></p>
-  <p><%= book.description %></p>
-
-  <form action="/books/library/<%= book._id %>?_method=DELETE" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <button type="submit">Remove</button>
-  </form>
-
-  <a href="/books/<%= book._id %>">Test</a>
-
-<% }) %>
-
+<section class="mylibrary" id="mylibrary">
+  <h1 class="heading">My Library</h1>
+  <div class="lib-container">
+  <% books.forEach(function (book) { %>
+    <div class="lib-box">
+      <p><%= book.title %></p>
+      <div class="lib-bookimg">
+      <img src="<%= book.image %>" alt="">
+    <div class="lib-content">
+    <form action="/books/library/<%= book._id %>?_method=DELETE" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="remove" >Remove</button>
+    </form>
+    <a href="/books/<%= book._id %>">&nbsp;Details&nbsp;</a>
+   </div>
+  </div>
+   </div>
+    <% }) %>
+  </div>
+</section>  
+  
 <%- include('../partials/footer') %>

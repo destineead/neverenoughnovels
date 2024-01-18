@@ -1,0 +1,8 @@
+<%- include('../partials/header') %>
+
+<form action="/reviews/<%= review.id %>?_method=PUT" method="POST">
+  <input name="text" value="<%= review.content %>">
+  <button type="submit">Update Review</button>
+</form>
+
+<%- include('../partials/footer') %>

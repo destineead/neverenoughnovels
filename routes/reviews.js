@@ -6,6 +6,8 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.post('/books/:id/reviews', ensureLoggedIn, reviewsCtrl.create);
 
+router.get('/books/:id/reviews/:reviewId/edit', ensureLoggedIn, reviewsCtrl.edit);
+
 router.delete('/books/:id/reviews/:reviewId', ensureLoggedIn, reviewsCtrl.deleteReview);
 
 module.exports = router;

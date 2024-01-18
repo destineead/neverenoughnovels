@@ -3,15 +3,8 @@ const Book = require('../models/book');
 module.exports = {
   create,
   deleteReview,
+  edit
 };
-
-async function deleteReview(req, res) {
-  const book = await Book.findOne({ 'reviews._id': req.params.reviewId, 'reviews.user': req.user._id });
-  if (!book) return res.redirect('/books/library');
-  book.reviews.remove(req.params.reviewId);
-  await book.save();
-  res.redirect(`/books/${book._id}`);
-}
 
 async function create(req, res) {
   const book = await Book.findById(req.params.id);
@@ -25,5 +18,22 @@ async function create(req, res) {
     console.log(err);
   }
   res.redirect(`/books/${book._id}`);
+}
+
+async function deleteReview(req, res) {
+  const book = await Book.findOne({ 'reviews._id': req.params.reviewId, 'reviews.user': req.user._id });
+  if (!book) return res.redirect('/books/library');
+  book.reviews.remove(req.params.reviewId);
+  await book.save();
+  res.redirect(`/books/${book._id}`);
+}
+
+async function edit(req, res) {
+  const book = await Book.findOne({
+    'reviews._id': req.params.reviewId,
+    'reviews.user': req.user._id,
+  });
+  const review = book.reviews.id(req.params.reviewId)
+  res.render('reviews/edit', { title: 'Edit Review', book , review })
 }
 

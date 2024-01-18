@@ -45,18 +45,21 @@
           <td><%= r.content %></td>
           <td><%= r.user %></td>
           <td><%= r.rating %></td>
+          <td><% if (user && r.user.equals(user._id)) { %>
+          <a href="/books/<%= book._id %>/reviews/<%= r._id %>/edit">Edit</a>
+         <% } %></td>
         </tr>
       </tbody>
     </table>
-    <button>Edit</button>
+     
     
     <form action="/books/<%= book._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
       <input type="hidden" name="_method" value="DELETE">
       <button type="submit">Remove</button>
     </form>
-    <% }); %>
-    
 
+<% }); %>
+    
 <% } else { %>
   <h5>No Reviews Yet</h5>
 <% } %>

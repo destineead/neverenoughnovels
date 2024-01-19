@@ -4,11 +4,8 @@ Application allows users to create virtual bookshelves, organize and track their
 
 ## SCREENSHOTS
 
-Home Page
-
-Search
-
-My Library
+<img src="https://i.imgur.com/ZOcEWgU.png">
+<img src="https://i.imgur.com/jtXu4Ge.png">
 
 ## PLANNING
 
@@ -27,7 +24,7 @@ My Library
 
 ## GETTING STARTED
 
-[Click to Launch Never Enough Novels]
+[Click to launch Never Enough Novels](https://neverenoughnovels-ebeda06d105f.herokuapp.com/)
 
 ## NEXT STEPS
 

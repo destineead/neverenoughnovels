@@ -3,16 +3,16 @@
 **Created by [Destinee Adomako](https://www.linkedin.com/in/destineeadomako/)**
 ### [CLICK TO PLAY](https://amarpan.github.io/simon-memory-game)
 
-## :camera_flash: Screenshots
-
-Application allows users to create virtual bookshelves, organize and track their reading progress, and discover new books based on their interests. Users can also write and read book reviews.
 
 ## 📝 Description
+Application allows users to create virtual bookshelves, organize and track their reading progress, and discover new books based on their interests. Users can also write and read book reviews.
+
+## :camera_flash: Screenshots
 
 <img src="https://i.imgur.com/ZOcEWgU.png">
 <img src="https://i.imgur.com/jtXu4Ge.png">
 
-## :thinking_face: Planning
+## 🤔 Planning
 
 [https://trello.com/](https://trello.com/b/voQv7cem/never-enough-novels)
 

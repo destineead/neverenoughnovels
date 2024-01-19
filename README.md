@@ -1,17 +1,22 @@
 # Never Enough Novels
 
+**Created by [Destinee Adomako](https://www.linkedin.com/in/destineeadomako/)**
+### [CLICK TO PLAY](https://amarpan.github.io/simon-memory-game)
+
+## :camera_flash: Screenshots
+
 Application allows users to create virtual bookshelves, organize and track their reading progress, and discover new books based on their interests. Users can also write and read book reviews.
 
-## SCREENSHOTS
+## 📝 Description
 
 <img src="https://i.imgur.com/ZOcEWgU.png">
 <img src="https://i.imgur.com/jtXu4Ge.png">
 
-## PLANNING
+## :thinking_face: Planning
 
 [https://trello.com/](https://trello.com/b/voQv7cem/never-enough-novels)
 
-## TECHNOLOGY USED
+## 💻 Technologies Used
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
 ![Express](https://img.shields.io/badge/-Express-05122A?style=flat&logo=express)
@@ -26,11 +31,11 @@ Application allows users to create virtual bookshelves, organize and track their
 ![Trello](https://img.shields.io/badge/-Trello-05122A?style=flat&logo=trello)
 ![Heroku](https://img.shields.io/badge/-Heroku-05122A?style=flat&logo=heroku)
 
-## GETTING STARTED
+## :fire: Getting Started
 
 [Click to launch Never Enough Novels](https://neverenoughnovels-ebeda06d105f.herokuapp.com/)
 
-## NEXT STEPS
+## :satellite: Upcoming Features
 
 Next Steps: Planned future enhancements (icebox items).
 

@@ -1,8 +1,6 @@
 # Never Enough Novels
 
 **Created by [Destinee Adomako](https://www.linkedin.com/in/destineeadomako/)**
-### [CLICK TO PLAY](https://amarpan.github.io/simon-memory-game)
-
 
 ## 📝 Description
 Application allows users to create virtual bookshelves, organize and track their reading progress, and discover new books based on their interests. Users can also write and read book reviews.

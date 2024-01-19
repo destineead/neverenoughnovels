@@ -71,7 +71,6 @@ async function deleteBook(req, res) {
 }
 
 async function show(req, res) {
-  console.log(req.params.id)
   const book = await Book.findById(req.params.id);
   res.render('books/show', { book , title: book.name });
 }

@@ -1,13 +1,11 @@
 <%- include('../partials/header') %>
 <section class="show">
-<h2>Book Details</h2>
+<h2>Book Details</h2><br>
 <tbody>
-    <%= book.title %><br>
-    <%= book.authors %><br>
-    <%= book.subtitle %><br>
+    <%= book.title %><br><br>
+    <%= book.authors %><br><br>
     <%= book.description %><br>
     <%= book.categories %><br>
-    <%= book.averageRating %><br>
     <% if (book.image) { %>
       <img src="<%= book.image %>" alt="">
     <% } %>
@@ -17,7 +15,7 @@
 <form action="/books/<%= book._id %>/reviews" method="POST">
   <h2>Reviews</h2>
   <div class="input-box">
-    <input type="text" placeholder="Tell is what you think?..."
+    <input type="text" name="content" placeholder="Tell us what you think?..."
     required>
     </div><br>
     <br><br><label>&nbsp;&nbsp;Rating:</label>
@@ -46,7 +44,7 @@
       <% book.reviews.forEach(function(r) { %>
         <tr>
           <td><%= r.content %></td>
-          <td><%= r.user %></td>
+          <td><img src="<%= r.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">&nbsp;<%= r.userName %></td>
           <td><%= r.rating %></td>
           <td><% if (user && r.user.equals(user._id)) { %>
           <a href="/books/<%= book._id %>/reviews/<%= r._id %>/edit">Edit</a>

@@ -51,7 +51,7 @@ a > img {
 
 section {
   padding: 2rem 9%;
-  margin-top: 6rem;
+  margin-top: 8rem;
 }
 /* header ends here */
 
@@ -282,14 +282,13 @@ section {
 
 
 /* show page starts here */
-.show{
-  min-height: 100vh;
+.show {
   background-size: cover;
   background-position: center;
   max-width: 800px;
-  margin: 20px auto;
+  margin: 100px auto;
   padding: 20px;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h2{
@@ -359,8 +358,47 @@ button {
 button:hover {
   background-color: #c82333;
 }
-
 /* show page ends here */
+
+/* edit page starts here */
+.edit {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 1-px rgba(0,0,0,.1);
+}
+
+.edit > h2 {
+  color: #333;
+}
+
+.edit-input-box {
+  margin-bottom: 20px;
+}
+
+.edit-rating > input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.edit-rating > label {
+  font-weight: bold;
+}
+
+.edit-rating > button {
+  background-color:#4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* edit page ends here */
 
 /* footer starts here */
 .footer {

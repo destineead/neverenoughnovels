@@ -1,0 +1,19 @@
+<section class="edit">
+  <div class="edit-rating">
+    <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+      <h2>Edit Review</h2>
+      <div class="edit-input-box">
+        <input type="text" name="content" placeholder="Edit your review..." value="<%= review.content %>" required>
+      </div><br>
+      <br><br><label>&nbsp;&nbsp;Rating:</label>
+      <select name="rating">
+        <option value="1" <%= review.rating === 1 ? 'selected' : '' %>>1</option>
+        <option value="2" <%= review.rating === 2 ? 'selected' : '' %>>2</option>
+        <option value="3" <%= review.rating === 3 ? 'selected' : '' %>>3</option>
+        <option value="4" <%= review.rating === 4 ? 'selected' : '' %>>4</option>
+        <option value="5" <%= review.rating === 5 ? 'selected' : '' %>>5</option>
+      </select><br><br><br>
+      <button type="submit" class="submit">Update Review</button>
+    </form>
+  </div>
+</section>

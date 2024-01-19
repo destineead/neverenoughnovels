@@ -1,3 +1,4 @@
+<%- include('../partials/header') %>
 <section class="edit">
   <div class="edit-rating">
     <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
@@ -17,3 +18,4 @@
     </form>
   </div>
 </section>
+<%- include('../partials/footer') %>

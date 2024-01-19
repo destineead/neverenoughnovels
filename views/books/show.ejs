@@ -4,10 +4,10 @@
 <tbody>
     <%= book.title %><br><br>
     <%= book.authors %><br><br>
-    <%= book.description %><br>
+    <%= book.description %><br><br>
     <%= book.categories %><br>
     <% if (book.image) { %>
-      <img src="<%= book.image %>" alt="">
+      <br><img src="<%= book.image %>" alt="">
     <% } %>
 </tbody>
 
@@ -34,29 +34,29 @@
   <table>
     <thead>
       <tr>
-        <th>Content</th>
         <th>User</th>
-        <th>Rating</th>
+        <th>Content</th>
+        <th>Stars</th>
       </tr>
     </thead>
 
     <tbody>
       <% book.reviews.forEach(function(r) { %>
         <tr>
+          <td><img src="<%= r.userAvatar %>" alt="avatar" class="avatar" referrerpolicy="no-referrer"><br>&nbsp;&nbsp;<%= r.userName %></td>
           <td><%= r.content %></td>
-          <td><img src="<%= r.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">&nbsp;<%= r.userName %></td>
           <td><%= r.rating %></td>
-          <td><% if (user && r.user.equals(user._id)) { %>
-          <a href="/books/<%= book._id %>/reviews/<%= r._id %>/edit">Edit</a>
-         <% } %></td>
         </tr>
       </tbody>
     </table>
-     
+    
+    <% if (user && r.user.equals(user._id)) { %>
+    <button class="submit"><a href="/books/<%= book._id %>/reviews/<%= r._id %>/edit">Edit</a></button>
+   <% } %>
     
     <form action="/books/<%= book._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
       <input type="hidden" name="_method" value="DELETE">
-      <button type="submit">Remove</button>
+      <button class="submit" type="submit">Remove</button>
     </form>
 
 <% }); %>

@@ -1,7 +1,10 @@
 * {
   margin: 0; padding: 0;
   box-sizing: border-box;
-  font-family: Verdana, Tahoma, sans-serif;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
   outline: none; border:none;
   text-decoration: none;
   text-transform: initial;
@@ -9,7 +12,7 @@
 }
 
 html{
-  font-size: 62.5%;
+  font-size: 80%;
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
   overflow-x: hidden;
@@ -19,7 +22,7 @@ html{
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  background: #fff;
+  background: #D6CCC2;
   padding: 2rem 9%;
   display: flex;
   align-items: center;
@@ -28,23 +31,23 @@ header {
   box-shadow: 0 .5rem 1rem rgb(0, 0, 0,.1);
 }
 
-header.logo {
-  font-size: 3rem;
-  color: #6A5B6E; 
-  font-weight: bolder;
+.logo > h1 {
+  font-weight: 900;
+  font-style: italic;
+  color: #EDEDE9;
 }
 
 header .navbar a{
   font-size: 2rem;
   padding:0 1.5rem;
-  color: #96616B;
+  color: #EDEDE9;
 }
 
 header .navbar a:hover{
-  color: purple;
+  color: #D5BDAF;
 }
 
-a > img {
+.navbar > img {
   width: 500;
   height: 300;
 }
@@ -70,19 +73,19 @@ section {
 
 .home .content h3{
   font-size: 6rem;
-  color: #96616B;
+  color: #D5BDAF;
 }
 
 .home .content span{
   font-size: 3.5rem;
-  color: #E2A0FF;
+  color: #E3D5CA;
   padding: 1rem 0;
   line-height: 1.5;
 }
 
 .home .content p{
   font-size: 1.5rem;
-  color: #96616B;
+  color: #D6CCC2;
   padding: 1rem 0;
   line-height: 1.5;
 }
@@ -91,7 +94,7 @@ section {
   display: inline-block;
   margin-top: 1rem;
   border-radius: 5rem;
-  background: #96616B;
+  background: #D5BDAF;
   color: #fff;
   padding: .9rem 3.5rem;
   cursor: pointer;
@@ -99,23 +102,22 @@ section {
 }
 
 .submit:hover{
-  background: #E2A0FF;
+  background: #D5BDAF;
 }
 
 #search {
   padding: 12px 20px;
   margin: 8px 0;
-  border: 1px solid #96616B;
+  border: 1px solid #D6CCC2;
   border-radius: 4px;
 }
 
 .heading {
   text-align: center;
   font-size: 4rem;
-  color: #96616B;
+  color: #D5BDAF;
   padding: 1rem;
   margin: 2rem 0;
-  background: #FDFFFC;
 }
 /* home page ends here */
 
@@ -174,6 +176,7 @@ section {
   font-size: 2rem;
   padding:0 1.5rem;
   text-align: center;
+  color: #D5BDAF;
  }
 
 #addlibrary {
@@ -186,18 +189,18 @@ section {
 
 #addlibrary:hover {
   bottom: 0; left: 0; right: 0;
-  background-color: #333;
+  background-color: #D6CCC2;
   height: 5rem;
   line-height: 5rem;
   font-size: 2rem;
   width: 100%;
-  color: #fff;
+  color: #EDEDE9;
 }
 /* results page ends here */
 
 /* my library page starts here */
 #mylibrary {
-  background-color: #f4f4f4;
+  background-color: #fff;
   padding: 2rem 0;
 }
 
@@ -209,8 +212,8 @@ section {
 }
 
 .mylibrary .heading {
-  font-size: 4rem;
-  color: #96616B;
+  font-size: 6rem;
+  color: #D5BDAF;
   margin: 2rem 0;
 }
 
@@ -236,7 +239,7 @@ section {
   font-size: 2rem;
   padding: 1rem;
   text-align: center;
-  color: #96616B;
+  color: #D5BDAF;
 }
 
 .lib-bookimg {
@@ -253,21 +256,23 @@ section {
 }
 
 .remove {
-  background-color: #96616B;
+  display: block;
+  background-color: #D5BDAF;
   color: #fff;
-  padding: .7rem 1.5rem;
-  border: none;
+  padding: .7rem 1.7rem;
   cursor: pointer;
   font-size: 1.5rem;
+  width: 100%;
+  margin-bottom: .5rem;
 }
 
 .remove:hover {
-  background: #E2A0FF;
+  background: #333;
 }
 
 .lib-content a {
-  display: inline-block;
-  background-color: #96616B;
+  display: block;
+  background-color: #D5BDAF;
   color: #fff;
   padding: .7rem 1.7rem;
   cursor: pointer;
@@ -276,10 +281,9 @@ section {
 }
 
 .lib-content a:hover {
-  background: #E2A0FF;
+  background: #333;
 }
 /* my library page ends here */
-
 
 /* show page starts here */
 .show {
@@ -291,8 +295,13 @@ section {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-h2{
-  color: #333;
+h2 {
+  color: #D5BDAF;
+  font-size: 4rem;
+}
+
+.rating, .input-box {
+  margin-top: 20px;
 }
 
 table {
@@ -301,20 +310,12 @@ table {
   margin-top: 20px;
 }
 
-table, th, td {
-  border: 1px solid #ddd;
+tr {
+  border-bottom: 1px solid #ddd; /* Add a border between rows */
 }
 
-th, td {
-  background-color: #f2f2f2;
-}
-
-tbody tr:hover {
-  margin-top: 20px;
-}
-
-.rating, .input-box {
-  margin-top: 20px;
+td {
+  padding: 10px;
 }
 
 input[type="text"], select {
@@ -326,38 +327,32 @@ input[type="text"], select {
 }
 
 button.submit {
-  background-color: #4caf50;
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: #D5BDAF;
   color: #fff;
-  padding: 10px 20px;
-  border: none;
+  padding: .9rem 3.5rem;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.7rem;
+  text-decoration: none;
+  margin-top: 0.5rem;
 }
 
 button.submit:hover {
-  background-color: #45a049;
+  background: #D5BDAF;
 }
+
 h5 {
   color: #555;
   margin-top: 20px;
 }
 
-tr > a {
-  text-decoration: none;
-  color: #007bff;
+.avatar {
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-button {
-  background-color: #dc3545;
-  color: #fff;
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #c82333;
-}
 /* show page ends here */
 
 /* edit page starts here */
@@ -368,6 +363,7 @@ button:hover {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 1-px rgba(0,0,0,.1);
+  margin-top: 100px;
 }
 
 .edit > h2 {
@@ -397,6 +393,15 @@ button:hover {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+table {
+  flex: 1 1 30rem;
+  box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+  border-radius: .5rem;
+  border: .1rem solid rgba(0,0,0,.1);
+  position: relative;
+  width: 100%;
 }
 /* edit page ends here */
 
